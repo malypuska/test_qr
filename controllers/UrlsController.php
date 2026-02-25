@@ -52,8 +52,7 @@ class UrlsController extends Controller {
             }
         }
 
-        Yii::$app->response->format = Response::FORMAT_JSON;
-        return ActiveForm::validate($model);
+        return null;
     }
 
     public function actionView($id) {

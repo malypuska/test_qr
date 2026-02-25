@@ -18,7 +18,9 @@ $(document).ready(function () {
             dataType: 'html',
             data: form_data,
             success: function (html) {
-                body_content.html(html);
+                if (html.length > 0) {
+                    body_content.html(html);
+                }
             }
         });
     });

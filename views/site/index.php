@@ -10,24 +10,26 @@ $this->title = 'Qr';
 
     <div class="body-content" id="body-content">
         <div class="row">
-            <div class="col-lg-5">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-6">
                 <?php
                 $form = ActiveForm::begin([
+                    'layout'=>'horizontal',
                     'id' => 'url-form',
                     'action' => Url::toRoute('urls/add-url'),
                     'enableAjaxValidation' => true,
-                    'validationUrl' => Url::toRoute('urls/validation')
+                    'validationUrl' => Url::toRoute('urls/validation'),
+                    'class' => 'form-horizontal',
                 ]);
                 ?>
 
-                    <?= $form->field($model, 'url')->textInput(['autofocus' => true])->label('Введите URL ссылки')->hint('http:: или https ну и далее все атрибуты') ?>
-
-                <div class="form-group">
                 <?= Html::button('OK', ['id' => 'ok-btn', 'class' => 'btn btn-primary', 'name' => 'login-button']) ?>
-                </div>
+                
+                <?= $form->field($model, 'url')->textInput(['autofocus' => true, 'placeholders' => 'Введите URL ссылки'])->label(false)->hint('http:: или https ну и далее все атрибуты') ?>
 
                 <?php ActiveForm::end(); ?>
             </div>
+            <div class="col-lg-4"></div>
         </div>            
 
     </div>
