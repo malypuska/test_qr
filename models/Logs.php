@@ -65,4 +65,8 @@ class Logs extends \yii\db\ActiveRecord {
 
         return $value;
     }
+    
+    public function getUrl() {
+        $this->hasOne(Urls::class, ['id' => 'url_id']);
+    }
 }

@@ -89,4 +89,8 @@ class Urls extends \yii\db\ActiveRecord {
     public function getTransitionUrl() {
         return Url::toRoute(['urls/transition', 'id' => $this->id], ['target' => '_blank']);
     }
+    
+    public function getLogs() {
+        return $this->hasMany(Logs::class, ['url_id' => 'id']);
+    }
 }
